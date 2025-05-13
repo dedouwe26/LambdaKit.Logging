@@ -18,7 +18,10 @@
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="../README.md" Pack="true" PackagePath="/"/>
+    <None Include="../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LambdaKit.Terminal" Version="5.0.0" />
   </ItemGroup>
   <PropertyGroup>
     <DocumentationFile>bin/$(Configuration)/$(TargetFramework)/$(AssemblyName).xml</DocumentationFile>

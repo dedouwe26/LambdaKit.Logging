@@ -1,3 +1,5 @@
+using LambdaKit.Terminal;
+
 namespace LambdaKit.Logging.Targets;
 
 /// <summary>
@@ -30,14 +32,14 @@ public class TerminalTarget : FormattedTarget {
     /// Creates a target that targets the terminal.
     /// </summary>
     /// <param name="format">The format to write to the terminal (default, more info: <see cref="Format"/>).</param>
-    /// <param name="terminalOut">The out stream (default: <see cref="Terminal.Out"/>).</param>
-    /// <param name="terminalError">The error stream (default: <see cref="Terminal.Error"/>).</param>
+    /// <param name="terminalOut">The out stream (default: <see cref="Terminal.Terminal.Out"/>).</param>
+    /// <param name="terminalError">The error stream (default: <see cref="Terminal.Terminal.Error"/>).</param>
     public TerminalTarget(string? format = null, TextWriter? terminalOut = null, TextWriter? terminalError = null) {
         if (format != null) {
             Format = format;
         }
-        Out = terminalOut ?? Terminal.Out;
-        Error = terminalError ?? Terminal.Error;
+        Out = terminalOut ?? Terminal.Terminal.Out;
+        Error = terminalError ?? Terminal.Terminal.Error;
     }
     /// <inheritdoc/>
     public override void Dispose() {

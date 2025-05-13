@@ -1,6 +1,7 @@
 ﻿// The namespace of terminal logging.
 using LambdaKit.Logging;
 using LambdaKit.Logging.Targets;
+using LambdaKit.Terminal;
 
 class Program {
     public const string LoggerID = "me.0xDED.Terminal.examples";
@@ -49,7 +50,7 @@ class Program {
         subsublogger.LogDebug("<<< Different name format");
 
         // Change message format, can also be done with FileTarget:
-        sublogger2.GetTarget<TerminalTarget>(0)!.Format = "<{1}>: {3}: ({2}) : {5}{4}"+ANSI.Styles.ResetAll;
+        sublogger2.GetTarget<TerminalTarget>(0)!.Format = "<{1}>: {3}: ({2}) : {5}{4}"+ANSI.SGR.BuildedResetAll;
         // NOTE: Knowing the index is faster with more targets!
         
         sublogger2.LogDebug("Wow cool new format!");
