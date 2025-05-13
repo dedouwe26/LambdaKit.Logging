@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaKit.Logging", "LambdaKit.Logging\LambdaKit.Logging.csproj", "{D588634E-1F94-4725-9922-EC4122475C48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaKit.Logging", "LambdaKit.Logging/LambdaKit.Logging.csproj", "{D588634E-1F94-4725-9922-EC4122475C48}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{047DAEB5-CB73-48BF-B93D-38078480FCC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "examples\Logging\Logging.csproj", "{78E7F3AF-9DBA-4C74-8183-71AB8FA8457A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "examples/Logging/Logging.csproj", "{78E7F3AF-9DBA-4C74-8183-71AB8FA8457A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
