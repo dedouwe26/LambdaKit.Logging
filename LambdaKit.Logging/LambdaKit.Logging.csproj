@@ -22,7 +22,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="LambdaKit.Terminal" Version="5.0.2" />
-    <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="8.0.19" />
+    <PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="8.0.20" />
   </ItemGroup>
   <PropertyGroup>
     <DocumentationFile>bin/$(Configuration)/$(TargetFramework)/$(AssemblyName).xml</DocumentationFile>
