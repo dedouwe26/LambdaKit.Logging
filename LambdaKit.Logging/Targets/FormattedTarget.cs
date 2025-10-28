@@ -11,7 +11,7 @@ public abstract class FormattedTarget : ITarget {
     /// Default:
     /// <c>[{0}][{2}][{3}]: {4}</c>
     /// </remarks>
-    public string Format = "[{0}][{2}][{3}]: {4}";
+    public string format = "[{0}][{2}][{3}]: {4}";
 
     /// <summary>
     /// The format to use for creating names (0: parent name, 1: own name). <para/>
@@ -22,7 +22,7 @@ public abstract class FormattedTarget : ITarget {
     /// default:
     /// <c>{0}: {1}</c>
     /// </remarks>
-    public string NameFormat = "{0}: {1}";
+    public string nameFormat = "{0}: {1}";
 
     /// <summary>
     /// Generates the name of a logger with a format.
@@ -33,7 +33,7 @@ public abstract class FormattedTarget : ITarget {
         if (!logger.IsSubLogger) {
             return logger.Name;
         } else {
-            return string.Format(NameFormat, GetName((logger as SubLogger)!.ParentLogger), logger.Name);
+            return string.Format(nameFormat, GetName((logger as SubLogger)!.ParentLogger), logger.Name);
         }
     }
 
@@ -46,7 +46,7 @@ public abstract class FormattedTarget : ITarget {
     /// <param name="text">The text of the log.</param>
     /// <returns>The generated log.</returns>
     protected string GetText(Logger logger, DateTime time, Severity severity, string text) {
-        return string.Format(Format, GetName(logger), logger.ID, time.ToString(), severity.ToString(), text);
+        return string.Format(format, GetName(logger), logger.ID, time.ToString(), severity.ToString(), text);
     }
 
     /// <inheritdoc/>

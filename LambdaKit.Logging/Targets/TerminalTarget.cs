@@ -15,7 +15,7 @@ public class TerminalTarget : FormattedTarget {
     /// </summary>
     public TextWriter Error;
     /// <summary>
-    /// The format to use for writing to the terminal (0: name see <see cref="FormattedTarget.NameFormat"/>, 1: logger ID, 2: time, 3: severity, 4: message, 5: color ANSI).
+    /// The format to use for writing to the terminal (0: name see <see cref="FormattedTarget.nameFormat"/>, 1: logger ID, 2: time, 3: severity, 4: message, 5: color ANSI).
     /// </summary>
     /// <remarks>
     /// Default:

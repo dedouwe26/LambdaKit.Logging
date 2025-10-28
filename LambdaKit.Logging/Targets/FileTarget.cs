@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace LambdaKit.Logging.Targets;
 
 /// <summary>
@@ -7,7 +9,7 @@ public class FileTarget : FormattedTarget {
     /// <summary>
     /// The output stream to the file.
     /// </summary>
-    public readonly TextWriter FileOut;
+    public readonly FileStream FileOut;
     
     /// <summary>
     /// Creates a target that targets a log file.
@@ -16,16 +18,17 @@ public class FileTarget : FormattedTarget {
     /// <param name="format">The format to use for writing to a file ().</param>
     public FileTarget(string path, string? format = null) {
         if (format != null) {
-            Format = format;
+            base.format = format;
         }
-        FileOut = new StreamWriter(File.Open(path, FileMode.Create, FileAccess.Write, FileShare.ReadWrite));
+        FileOut = File.Open(path, FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
     }
     /// <inheritdoc/>
     /// <remarks>
     /// Writes a line.
     /// </remarks>
     public override void Write(Severity severity, DateTime time, Logger logger, object? text) {
-        FileOut.WriteLine(GetText(logger, time, severity, text?.ToString() ?? "(Null)"));
+        FileOut.Write(Encoding.UTF8.GetBytes(GetText(logger, time, severity, text?.ToString() ?? "(Null)")+'\n'));
+        FileOut.Flush();
     }
     /// <inheritdoc/>
     public override void Dispose() {
