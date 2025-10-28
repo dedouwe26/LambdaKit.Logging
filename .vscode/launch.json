@@ -25,15 +25,5 @@
 			"type": "coreclr",
 			"request": "attach"
 		}
-        // {
-        //     "name": "MyProject - Debug",
-        //     "type": "coreclr",
-        //     "request": "launch",
-        //     "preLaunchTask": "MyProject: Build",
-        //     "program": "${workspaceFolder}/MyProject/bin/Debug/net8.0/MyProject.dll",
-        //     "cwd": "${workspaceFolder}",
-        //     "stopAtEntry": false,
-        //     "console": "integratedTerminal"
-        // }
     ]
 }
