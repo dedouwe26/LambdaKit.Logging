@@ -37,24 +37,5 @@
 			],
 			"problemMatcher": "$msCompile"
 		}
-		// {
-		// 	"label": "MyProject: Build",
-		// 	"group": "build",
-		// 	"command": "dotnet",
-		// 	"args": ["build", "${workspaceFolder}/MyProject/MyProject.csproj"]
-		// },
-		// {
-		// 	"label": "MyProject: Package",
-		// 	"dependsOn": "MyProject: Test",
-		// 	"group": "build",
-		// 	"command": "dotnet",
-		// 	"args": ["pack", "${workspaceFolder}/MyProject/MyProject.csproj"]
-		// },
-		// {
-		// 	"label": "MyProject: Test",
-		// 	"group": "test",
-		// 	"command": "dotnet",
-		// 	"args": ["test", "${workspaceFolder}/MyProject.Tests/MyProject.Tests.csproj"]
-		// }
 	]
 }
