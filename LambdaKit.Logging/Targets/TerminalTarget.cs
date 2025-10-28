@@ -15,13 +15,13 @@ public class TerminalTarget : FormattedTarget {
     /// </summary>
     public TextWriter Error;
     /// <summary>
-    /// The format to use for writing to the terminal (0: name see <see cref="FormattedTarget.nameFormat"/>, 1: logger ID, 2: time, 3: severity, 4: message, 5: color ANSI).
+    /// The format to use for writing to the terminal (0: name, see <see cref="FormattedTarget.nameFormat"/>, 1: logger ID, 2: time, 3: severity, 4: message, 5: color ANSI).
     /// </summary>
     /// <remarks>
     /// Default:
     /// <c>{5}[{0}][{2}][BOLD{3}RESETBOLD]: {4}RESETALL</c>
     /// </remarks>
-    public new string Format = "{5}[{0}][{2}]["+ANSI.SGR.Build(ANSI.SGR.BOLD)+"{3}"+ANSI.SGR.Build(ANSI.SGR.RESETINTENSITY)+"]: {4}"+ANSI.SGR.BuildedResetAll;
+    public new string format = "{5}[{0}][{2}]["+ANSI.SGR.Build(ANSI.SGR.BOLD)+"{3}"+ANSI.SGR.Build(ANSI.SGR.RESETINTENSITY)+"]: {4}"+ANSI.SGR.BuildedResetAll;
     /// <summary>
     /// The colors of the severities (index: 0: Fatal, 1: Error, 2: Warning, 3: Message, 4: Info, 5: Debug, 6: Trace).
     /// </summary>
@@ -31,12 +31,12 @@ public class TerminalTarget : FormattedTarget {
     /// <summary>
     /// Creates a target that targets the terminal.
     /// </summary>
-    /// <param name="format">The format to write to the terminal (default, more info: <see cref="Format"/>).</param>
+    /// <param name="format">The format to write to the terminal (default, more info: <see cref="format"/>).</param>
     /// <param name="terminalOut">The out stream (default: <see cref="Terminal.Terminal.Out"/>).</param>
     /// <param name="terminalError">The error stream (default: <see cref="Terminal.Terminal.Error"/>).</param>
     public TerminalTarget(string? format = null, TextWriter? terminalOut = null, TextWriter? terminalError = null) {
         if (format != null) {
-            Format = format;
+            this.format = format;
         }
         Out = terminalOut ?? Terminal.Terminal.Out;
         Error = terminalError ?? Terminal.Terminal.Error;
@@ -47,7 +47,7 @@ public class TerminalTarget : FormattedTarget {
     }
 
     private string GetText(Logger logger, DateTime time, Severity severity, string text, string color) {
-        return string.Format(Format, GetName(logger), logger.ID, time.ToString(), severity.ToString(), text, color);
+        return string.Format(format, GetName(logger), logger.ID, time.ToString(), severity.ToString(), text, color);
     }
 
     /// <inheritdoc/>

@@ -55,7 +55,7 @@ class Program {
 		subsublogger.LogDebug("<<< Different name format");
 
 		// Change message format, can also be done with FileTarget:
-		sublogger2.GetTarget<TerminalTarget>(0)!.Format = "<{1}>: {3}: ({2}) : {5}{4}"+ANSI.SGR.BuildedResetAll;
+		sublogger2.GetTarget<TerminalTarget>(0)!.format = "<{1}>: {3}: ({2}) : {5}{4}"+ANSI.SGR.BuildedResetAll;
 		// NOTE: Using the index of a target is faster with more targets.
 		
 		sublogger2.LogDebug("Wow cool new format!");
